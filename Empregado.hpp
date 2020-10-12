@@ -3,26 +3,25 @@
 
 #include <iostream>
 #include <string>
+#define HORAS_ESPERADAS 8
+#define METADE 2
 
 class Empregado {
-	
-  public:
-    double salarioHora;  
-    double quotaMensalVendas;  
 
+	private:
+		double salarioHora;
+		std::string nome;
+		double horasTrabalhadas;
 
-    double pagamentoMes(double horasTrabalhadas) {
- 
-      double t = horasTrabalhadas;
-	  
-	  //Cálculo de hora extra (+50% se horasTrabalhadas > 8)
-      if (horasTrabalhadas > 8) {
-        double x = horasTrabalhadas - 8;
-        t += x / 2;
-      }
-	  return t * salarioHora;
-    }
-	
+	public:
+		double getSalarioHora();
+		std::string getNome();
+		double getHorasTrabalhadas();
+		void setSalarioHora(double valorSalario);
+		void setNome(std::string Nome);
+		void setHorasTrabalhadas(double horaTrabalhada);
+		double pagamentoMes();
+
 };
 
 #endif
